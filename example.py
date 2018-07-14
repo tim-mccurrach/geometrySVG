@@ -9,7 +9,7 @@ canvas.add_point(180, 190, "C")
 canvas.add_polygon("ABC", name="triangle", fill="none", stroke="black")
 
 canvas.triangle.add_angles(fill="blue",
-                           text=["29\u00b0", "x\u00b0", "35\u00b0"],  # \u00b0 is degrees
+                           text=["a-9\u00b0", "5a\u00b0", "a\u00b0"],  # \u00b0 is degrees
                            font_family="Times Roman")
 
 a = canvas.generate_SVG(500, 500, style_info=True)
