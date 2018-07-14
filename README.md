@@ -44,6 +44,7 @@ The following methods are provided to add lines and shapes to the canvas:
     canvas.add_polygon("ABCDE", name="pentagon")
     canvas.pentagon.add_angles()
 
+* `SVGCanvas.add_text(text, *point, **kwargs)` Adds text at the given point.  
 
 **Points**
 In all methods points can either be provided as a single string, or separated into individual points. For example
