@@ -61,7 +61,7 @@ Many SVG attributes include hyphens. To use these, simply replace the hyphen wit
 ## Adding angles
 Angles can be added using the method `add_angle` for example:
 
-    canvas.add_angle("ABC", text="37", text_kwargs={font-size:12}, fill="blue")
+    canvas.add_angle("ABC", text="37", reflex=True, text_kwargs={font-size:12}, fill="blue")
 As before SVG attributes can be added as key-word arguments. `reflex` and `direction` are optional arguments, however at least one must be specified otherwise an error is raised. They indicate whether the angle should be a reflex one, or if it should go clockwise or anticlockwise (from the line AB, to the line BC). As before key word arguments can be used to add SVG attributes, and there is the additional arguments `text_kwargs`, which accepts a mapping for any SVG attributes to be applied to the text inside an angle.
 
 If a polygon has been created, it will have its own methods `add_angle` and `add_angles`.  Both have an optional text argument, which in the case of `add_angles` must be an array (the position of the text within the array corresponds to the order in which the points were specified when the polygon was defined).
