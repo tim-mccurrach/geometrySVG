@@ -96,4 +96,5 @@ The following shows how the package can be used to create a simple image that mi
         file.write(a.encode('utf8'))  # utf8 encoding necessary due to degrees symbol
 
 The resulting image is shown below:
+
 <img src="/output.svg" />
