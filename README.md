@@ -30,7 +30,7 @@ Finally, when we have drawn our diagram, we can output the SVG for the whole can
 **Important note:** This package was originally intended to create inline SVG in an HTML file, and does not include all of the style information. If you would like to write directly to an SVG file, use `style_info=True` e.g
 
     result=canvas.generate_SVG(200, 200, style_info=True)
-    with open("output3svg", "w") as file:
+    with open("output.svg", "w") as file:
         file.write(result)
 
 ## Key Methods
@@ -94,3 +94,6 @@ The following shows how the package can be used to create a simple image that mi
     
     with open("output.svg", "wb") as file:
         file.write(a.encode('utf8'))  # utf8 encoding necessary due to degrees symbol
+
+
+<img src="/output.svg" />
