@@ -57,3 +57,40 @@ All methods have an optional `**kwargs` which can be used for adding SVG attribu
 `canvas.add_polygon("ABC", fill="red")`
 Many SVG attributes include hyphens. To use these, simply replace the hyphen with an underscore and it will be converted to a hyphen. For example to set `stroke-width` simply do:
 `canvas.add_line("AB", stoke_width=4)` 
+
+## Adding angles
+Angles can be added using the method `add_angle` for example:
+
+    canvas.add_angle("ABC", text="37", text_kwargs={font-size:12}, fill="blue")
+As before SVG attributes can be added as key-word arguments. `reflex` and `direction` are optional arguments, however at least one must be specified otherwise an error is raised. They indicate whether the angle should be a reflex one, or if it should go clockwise or anticlockwise (from the line AB, to the line BC). As before key word arguments can be used to add SVG attributes, and there is the additional arguments `text_kwargs`, which accepts a mapping for any SVG attributes to be applied to the text inside an angle.
+
+If a polygon has been created, it will have its own methods `add_angle` and `add_angles`.  Both have an optional text argument, which in the case of `add_angles` must be an array (the position of the text within the array corresponds to the order in which the points were specified when the polygon was defined).
+
+    canvas.add_polygon("ABCD", name="square")
+    #Add a single angle
+    canvas.square.add_angle("B",text="90")
+	#Add in all the angles with labels
+	canvas.square.add_angles(text=['90','90','90','90'])
+    
+
+## Example
+The following shows how the package can be used to create a simple image that might be used in a typical maths question.
+
+        from geometrySVG import SVGCanvas
+    
+    canvas = SVGCanvas(300, 300, cart_coords=True)
+    
+    canvas.add_point(30, 40, "A")
+    canvas.add_point(160, 60, "B")
+    canvas.add_point(180, 190, "C")
+    
+    canvas.add_polygon("ABC", name="triangle", fill="none", stroke="black")
+    
+    canvas.triangle.add_angles(fill="blue",
+                               text=["a-9\u00b0", "5a\u00b0", "a\u00b0"],  # \u00b0 is degrees
+                               font_family="Times Roman")
+    
+    a = canvas.generate_SVG(500, 500, style_info=True)
+    
+    with open("output.svg", "wb") as file:
+        file.write(a.encode('utf8'))  # utf8 encoding necessary due to degrees symbol
