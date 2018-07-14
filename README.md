@@ -35,11 +35,11 @@ Finally, when we have drawn our diagram, we can output the SVG for the whole can
 
 ## Key Methods
 The following methods are provided to add lines and shapes to the canvas:
-`SVGCanvas.add_line(*points, **kwargs)` Adds a single line to the canvas. There must be exactly 2 points given, otherwise an error is raised.
 
-`SVGCanvas.add_lines(*points, **kwargs)` Adds a series of lines that are joined end to end. E.g `add_lines("ABC")` is equivalent to `add_line("AB")` and `add_line("BC")`
+* `SVGCanvas.add_line(*points, **kwargs)` Adds a single line to the canvas. There must be exactly 2 points given, otherwise an error is raised.
+* `SVGCanvas.add_lines(*points, **kwargs)` Adds a series of lines that are joined end to end. E.g `add_lines("ABC")` is equivalent to `add_line("AB")` and `add_line("BC")`
 
-`SVGCanvas.add_polyon(*points, name=None, **kwargs)` This adds a closed polygon from the points. At least 3 points must be given to define a polygon otherwise an error is raised. The name attribute is provided in order to later access the polygon. It can be accessed as a property, to access the polygon methods. e.g.:
+* `SVGCanvas.add_polyon(*points, name=None, **kwargs)` This adds a closed polygon from the points. At least 3 points must be given to define a polygon otherwise an error is raised. The name attribute is provided in order to later access the polygon. It can be accessed as a property, to access the polygon methods. e.g.:
 
     canvas.add_polygon("ABCDE", name="pentagon")
     canvas.pentagon.add_angles()
