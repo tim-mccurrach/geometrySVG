@@ -76,7 +76,7 @@ If a polygon has been created, it will have its own methods `add_angle` and `add
 ## Example
 The following shows how the package can be used to create a simple image that might be used in a typical maths question.
 
-        from geometrySVG import SVGCanvas
+    from geometrySVG import SVGCanvas
     
     canvas = SVGCanvas(300, 300, cart_coords=True)
     
